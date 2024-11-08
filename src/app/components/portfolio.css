@@ -1,0 +1,100 @@
+/* logo1 styling */
+.logo1 { 
+    display: flex; 
+    justify-content: center; 
+    padding: 10px; 
+    border-radius: 10px; 
+    max-width: 800px; /* Increased width for single-line fit */
+    margin: 5px auto;
+}
+
+.logo1 ul { 
+    list-style: none; 
+    padding: 0; 
+    margin: 10px; 
+    display: flex; /* Ensures items are in a single line */
+    gap: 20px; /* Adds spacing between list items */
+    flex-wrap: nowrap; /* Prevents items from wrapping to a new line */
+}
+
+.logo1 li { 
+    color: #FFFFFF;
+    padding: 10px; 
+    font-size: 16px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    cursor: pointer; 
+}
+
+.logo1 li:hover { 
+    background-color: #83810f; 
+    color: #e98d0d;
+    transform: scale(1.05); 
+}
+
+
+/* gallery styling */
+.portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 2rem;
+    padding:30px 3px;
+    background-color: #030303;
+    border-radius: 25px;
+    border: 2px solid var(--hover-color);
+    box-shadow: var(--neon-box-shadow);
+}
+
+.port-box {
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    background: #292e33;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid var(--hover-color);
+    box-shadow: var(--neon-box-shadow);
+    transition: transform 0.3s ease;
+    height: 400px; /* Set a specific height for consistency */
+}
+.port-img {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    height: 100%;
+    width: 100%; 
+}
+
+.port-img img {
+    width: 100%; /* Fill the width of the container */
+    height: 100%; /* Fill the height of the container */
+    object-fit: cover; /* Cover the box while maintaining aspect ratio */
+    transition: opacity 0.5s ease;
+}
+
+.port-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.port-box:hover .port-content {
+    opacity: 1;
+    background: linear-gradient(rgb(94, 100, 58), pink, rgb(184, 160, 147), orange);
+    display: flex;
+}
+@media (max-width: 600px) {
+    .logo1 {
+        max-width: 100%; /* Full width on small screens */
+        font-size: small;
+    }
+    .logo1 ul{
+        gap:2px;
+    }
+}

@@ -1,0 +1,175 @@
+.main-text {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--hover-color);
+}
+.main-text h3{
+    font-weight: 900;
+    font-size: 30px;
+}
+/* Skills Section */
+.skills {
+    background: var(--secon-bg-color);
+    padding: 1rem; /* Add some padding for mobile */
+}
+
+.skill-main {
+    width: 100%;
+    display: grid;
+    margin:0  ;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 20px; /* Use gap for uniform spacing */
+}
+
+/* Skill Bar */
+.skill-bar {
+    margin-bottom: 2.3rem;
+    padding: 0 80px;
+}
+
+.skill-main h3 {
+    margin-bottom: 2rem;
+    font-weight: 900;
+    font-size: 25px;
+    text-align: center;
+    
+}
+
+.skill-left .skill-bar .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.skill-left .skill-bar .bar {
+    width: 60%;
+    height: 10px;
+    background: var(--bg-color);
+    border-radius: 25px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.skill-bar .bar span {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background: var(--hover-color);
+    border-radius: 25px;
+    box-shadow: var(--neon-box-shadow);
+}
+
+/* Skill Bars Width */
+.skill-bar .bar .html { width: 88%; animation: html 2s; }
+.skill-bar .bar .css { width: 80%; animation: css 3s; }
+.skill-bar .bar .javascript { width: 85%; animation: javascript 4s; }
+.skill-bar .bar .typescript { width: 89%; animation: typescript 5s; }
+.skill-bar .bar .figma { width: 90%; animation: figma 6s; }
+.skill-bar .bar .tailwind { width: 92%; animation: tailwind 7s; }
+
+/* Keyframes for Animation */
+@keyframes html { 0% { width: 0; } 100% { width: 88%; } }
+@keyframes css { 0% { width: 0; } 100% { width: 80%; } }
+@keyframes javascript { 0% { width: 0; } 100% { width: 85%; } }
+@keyframes typescript { 0% { width: 0; } 100% { width: 89%; } }
+@keyframes figma { 0% { width: 0; } 100% { width: 90%; } }
+@keyframes tailwind { 0% { width: 0; } 100% { width: 92%; } }
+
+/* Professional Section */
+.professional {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+    gap: 20px; /* Use gap for uniform spacing */
+}
+
+.box {
+    position: relative;
+    margin: 10px 0;
+    flex: 1 1 15rem;
+}
+
+.box .text {
+    align-items: center;
+    color: #fff;
+    font: 1rem;
+    text-align: center;
+}
+
+.box .text big {
+    font: 400;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box .text small {
+    display: block;
+    font-weight: 600;
+}
+
+/* Circle */
+.circle {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Ensure position for child elements */
+}
+
+.circle .points {
+    width: 2px;
+    height: 10px;
+    background: var(--bg-color);
+    position: absolute;
+    border-radius: 3px;
+    transform: rotate(calc(var(--i) * var(--rot))) translateY(-45px);
+}
+
+.points.marked {
+    animation: glow 0.04s linear forwards;
+    animation-delay: calc(var(--i) * 0.05s);
+}
+
+/* Glow Animation */
+@keyframes glow {
+    0% {
+        background-color: var(--bg-color);
+        box-shadow: none;
+    }
+    100% {
+        background: var(--hover-color);
+        box-shadow: var(--neon-box-shadow);
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .skill-main {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+    }
+
+    .professional {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+    }
+
+    .circle {
+        /* Adjust circle size for larger screens if needed */
+        height: 150px; /* Example of increasing size */
+    }
+}
+
+@media (max-width: 767px) {
+    .professional {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    .circle {
+        height: 120px; /* Maintain circle size on smaller screens */
+    }
+}
